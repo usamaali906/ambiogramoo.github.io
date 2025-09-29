@@ -28,7 +28,7 @@
     <nav class="flex items-center justify-between">
       <div class="flex items-center gap-3">
         <div class="w-9 h-9 rounded-xl bg-indigo-600 grid place-items-center font-black">JZ</div>
-        <span class="text-lg font-bold tracking-wider">THE JAZZ</span>
+        <span class="text-lg font-bold tracking-wider">AMBIGRAMOO</span>
       </div>
       <div class="flex items-center gap-2">
         <button id="btnGoProTop" class="px-4 py-2 rounded-xl bg-white/10 hover:bg-white/20">Go Pro</button>
@@ -188,7 +188,7 @@
       </details>
     </div>
     <footer class="mt-10 border-t border-white/10 pt-6 text-sm text-white/50 flex flex-col sm:flex-row gap-3 sm:gap-0 justify-between">
-      <span>© THE JAZZ</span>
+      <span>© </span>
       <div class="flex gap-4">
         <a href="#license" class="hover:text-white/80">License</a>
         <a href="#pricing" class="hover:text-white/80">Pricing</a>
@@ -325,7 +325,7 @@
         ls: String(state.letterSpacing)
       });
       location.hash = p.toString();
-      document.title = `Ambigram: ${state.words.a || ''}${state.words.b? ' ↔ ' + state.words.b : ''} | THE JAZZ`;
+      document.title = `Ambigram: ${state.words.a || ''}${state.words.b? ' ↔ ' + state.words.b : ''} | AMBIGRAMOO`;
     }
 
     function loadStateFromHash(){
@@ -402,7 +402,7 @@
 
       if(state.symmetry === 'rotational'){
         // Show word A upright; show word B (or A) rotated 180° (or given angle)
-        const topText = createTextNode(centerX, centerY - 40, a || 'THE JAZZ', {family, weight, stroke});
+        const topText = createTextNode(centerX, centerY - 40, a || 'AMBIGRAMOO', {family, weight, stroke});
         topText.setAttribute('font-size','140');
         g.appendChild(topText);
 
@@ -411,7 +411,7 @@
         bottomText.setAttribute('transform', `rotate(${state.angle}, ${centerX}, ${centerY})`);
         g.appendChild(bottomText);
       } else if(state.symmetry === 'mirror-v'){
-        const main = createTextNode(centerX, centerY - 20, a || 'THE JAZZ', {family, weight, stroke});
+        const main = createTextNode(centerX, centerY - 20, a || 'AMBIGRAMOO', {family, weight, stroke});
         main.setAttribute('font-size','160'); g.appendChild(main);
 
         const mirror = createTextNode(centerX, centerY + 20, (b || a || ''), {family, weight, stroke});
@@ -653,7 +653,7 @@
       setHashFromState(); saveLocal(); renderPreview();
     });
     $('#btnOpenEditor').addEventListener('click', ()=>{
-      if(!state.words.a){ state.words.a = toTitle($('#wordA').value || 'THE JAZZ'); }
+      if(!state.words.a){ state.words.a = toTitle($('#wordA').value || 'AMBIGRAMOO'); }
       state.words.b = toTitle($('#wordB').value);
       state.symmetry = $('#symmetry').value;
       openEditor(); setHashFromState(); saveLocal();
@@ -715,3 +715,4 @@
   </script>
 </body>
 </html>
+
